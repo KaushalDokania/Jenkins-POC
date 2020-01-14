@@ -6,7 +6,12 @@ pipeline {
                 sh 'python --version'
             }
         }
-        stage('Stage 2 - Run hello world') {
+        stage('Stage 2 - Check AWSCLI') {
+            steps {
+                sh 'aws --version'
+            }
+        }
+        stage('Stage 3 - Run hello world') {
             steps {
                 sh 'python src/hello_world.py'
             }
